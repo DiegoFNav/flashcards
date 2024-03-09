@@ -36,7 +36,11 @@ GIF created with LiceCap
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+My biggest challenge was getting the flip animation to work. Originally my cards used a simble tuple format for
+each card and I simply accessed either index 0 or 1 to show text. However this did not work for the flipping
+animation to function as it requried two seperate card elements to function rather than just one. So reworking
+my code to be more complicated and ensure the effect worked smoothly took a lot of work to get right.
+
 
 ## License
 

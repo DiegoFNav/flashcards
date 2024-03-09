@@ -1,45 +1,51 @@
 import { useState } from 'react'
 import './App.css'
+import Card from './components/Card';
 
 function App() {
-  const [side, setSide] = useState(0);
-  const [index, setIndex] = useState(0);
-
-  const cards = [["question 1", "answer 1"], ["question 2", "answer 2"], ["question 3", "answer 3"]]
-
-  function flip() {
-    if (side === 0) {
-      setSide(1);
-    } else {
-      setSide(0);
-    }
-  }
-
-  function next() {
-    let randomIndex = 0;
-    do {
-      randomIndex = Math.floor(Math.random() * cards.length);
-    } while (randomIndex === index);
-    console.log(randomIndex);
-    setIndex(randomIndex);
-    setSide(0);
-  }
-
+  const cards = [
+    {
+      question: "What is the closest planet to the Sun?",
+      answer: "Mercury",
+      imageUrl: "https://science.nasa.gov/wp-content/uploads/2023/06/solar-system-banner-1920x640-1.jpg?w=4096&format=jpeg",
+      category: "easy",
+    },
+    {
+      question: "There are 8 recognised planets in the Solar System. How many of them are Gas Giants?",
+      answer: "4",
+      category: "medium",
+    },
+    {
+      question: "What planet has the highest mountain in the Solar System?",
+      answer: "Mars",
+      category: "medium",
+    },
+    {
+      question: "What is the hottest terrestrial planet?",
+      answer: "Venus",
+      category: "easy",
+    },
+    {
+      question: "Why can we see surface details on Mars and Mercury but not on Venus?",
+      answer: "Venus is covered by too many clouds to see any features",
+      category: "hard",
+      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/dc/PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg',
+    },
+    {
+      question: "What planet could float in water because of its low density?",
+      answer: "Saturn",
+      category: "hard",
+      imageUrl: 'data:image/jpeg;base64,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',
+    },
+  ];
 
   return (
     <>
       <div className='main_container'>
-        <h1>The Ultimate Plant</h1>
-        <h3>How good it is</h3>
-        <h3>Number of cards:</h3>
-        <div className='card_container'>
-          <button className='card' onClick={flip}>
-            <div>
-              <h3>{cards[index][side]}</h3>
-            </div>
-          </button>
-          <button onClick={next}>Next</button>
-        </div>
+        <h1>The Solar System</h1>
+        <h3>How well do you know our solar system? Lets find out</h3>
+        <h3>Number of cards: {cards.length}</h3>
+        <Card cards={cards}/>
       </div>
     </>
   )

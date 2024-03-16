@@ -45,8 +45,12 @@ body {
     width: 40%;
     height: 40%;
     object-fit: cover;
+    margin: 10px;
 }
-
+.card-face h5 {
+    margin: 10px;
+    text-align: center;
+}
 
 .back {
     transform: rotateY(180deg);
@@ -59,10 +63,11 @@ body {
     backface-visibility: hidden;
 }
 
+
 .card.flipped .card-inner {
     transform: rotateY(180deg);
 }
 
-.next {
+.button-container {
     margin-top: 15px;
 }

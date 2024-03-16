@@ -1,46 +1,42 @@
-# Web Development Project 2 - Solar System Flash Cards
+# Web Development Project 3 - Solar System Flashcards
 
-Submitted by: Diego Nvarro
+Submitted by: Diego Navarro
 
-This web app: shows a set of flash cards with trivia about the Solar system. Go through cards and flip them to see their answers.
+This web app: An app that displays Solar System Trivia in which you submit a guess to see if it is correct
 
-Time spent: 10 hours spent in total
+Time spent: 3 hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-- [X] **The title of the card set and some information about it, such as a short description and the total number of cards are displayed**
-- [X] **A single card at a time is displayed, only showing one of the components of the information pair**
-- [X] **A list of card pairs is created**
-- [X] **Clicking on the card shows the corresponding component of the information pair**
-- [X] **Clicking the next button displays a random new card**
+- [x] **The user can enter their guess in a box before seeing the flipside of the card**
+- [x] **Clicking on a submit button shows visual feedback about whether the answer was correct or incorrect**
+- [x] **A back button is displayed on the card and can be used to return to the previous card in a set sequence**
+- [x] **A next button is displayed on the card and can be used to navigate to the next card in a set sequence**
 
 The following **optional** features are implemented:
 
-- [X] Cards contains images in addition to or in place of text
-- [X] Cards have different visual styles such as color based on their category
-- [X] *visual style implemented* Each card's difficulty is mapped to the color of their background from easy, medium, hard
+- [x] A shuffle button is used to randomize the order of the cards
+- [ ] A user's answer may be counted as correct even when it is slightly different from the target answer
+- [x] A counter displays the user's current and longest streak of correct responses
+- [ ] A user can mark a card that they have mastered and have it removed from the pool of answers as well as added to a list of mastered cards
 
 The following **additional** features are implemented:
 
-* [ ] List anything else that you added to improve the site's functionality!
+- [ ] List anything else that you added to improve the site's functionality!
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented required features:
+Here's a walkthrough of implemented user stories:
 
-<img src='Homework_2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='HW3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-GIF created with LiceCap  
+GIF created with LiceCap
 
 ## Notes
 
-My biggest challenge was getting the flip animation to work. Originally my cards used a simble tuple format for
-each card and I simply accessed either index 0 or 1 to show text. However this did not work for the flipping
-animation to function as it requried two seperate card elements to function rather than just one. So reworking
-my code to be more complicated and ensure the effect worked smoothly took a lot of work to get right.
-
+The biggest challenge was understanding how to shuffle the cards themselves. I eventually figured out that a copy of the cards was needed to be randomized and set as my new array.
 
 ## License
 
